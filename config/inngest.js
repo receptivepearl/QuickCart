@@ -22,6 +22,7 @@ export const syncUserCreation = inngest.createFunction(
       };
 
       await User.create(userData);
+      console.log("User created:", id);
       return { success: true, message: "User created successfully" };
     } catch (error) {
       console.error("Error in syncUserCreation:", error);
