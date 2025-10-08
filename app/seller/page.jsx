@@ -7,7 +7,6 @@ import axios from "axios";
 import { toast } from 'react-hot-toast';
 
 
-
 const AddProduct = () => {
 
   const {getToken} = useAppContext()
@@ -37,7 +36,7 @@ const AddProduct = () => {
     try {
 
       const token = await getToken()
-      const {data} = await axios.post('/api/product/add', formData, {headers: {Authorization: `Bearer ${token}`}}
+      const {data} = await axios.post('/api/product/add', formData, {headers: {Authorization: `Bearer ${token}`}})
 
       if (data.success) {
         toast.success(data.message)

@@ -2,6 +2,9 @@ import { v2 as cloudinary } from "cloudinary";
 import {getAuth} from '@clerk/nextjs/server'
 import authSeller from "@/lib/authSeller";
 import { nextImageLoaderRegex } from "next/dist/build/webpack-config";
+import { NextResponse } from "next/server";
+
+
 //configure cloudinary
 cloudinary.config({
     cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
