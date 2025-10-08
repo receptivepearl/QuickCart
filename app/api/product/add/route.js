@@ -21,7 +21,7 @@ export async function POST(request) {
         const formData = await request.formData()
 
         const name = formData.get('name');
-        const description = formData.get('descripton');
+        const description = formData.get('description');
         const category = formData.get('category');
         const price = formData.get('price');
         const offerPrice = formData.get('offerPrice');
@@ -40,15 +40,13 @@ export async function POST(request) {
                 return new Promise((resolve, reject)=>{
                     const stream = cloudinary.uploader.upload_stream(
                         {resource_type: 'auto'},
-                        {error,result} => {
-                            if (error) {
-                                reject(error)
-                            } else{
-                                resolve(result)
-                            }
+                        (error, result) => { 
+                            if (error) reject(error);
+                            else resolve(result);
                         }
-                    )
-                    stream.end(buffer)
+
+                    );
+                    stream.end(buffer);
                 })
             })
         )
