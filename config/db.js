@@ -15,9 +15,10 @@ async function connectDB() {
             bufferCommands:false
         }
 
-        cached.promise = mongoose.connect(`${process.env.MONGODB_URI}/quickcart`, opts).then((mongoose) => {
+        cached.promise = mongoose.connect('${process.env.MONGODB_URI}/quickcart',opts).then(mongoose => {
             return mongoose
         })
+
     }
 
     cached.conn = await cached.promise
