@@ -3,7 +3,7 @@ import {getAuth} from '@clerk/nextjs/server'
 import authSeller from "@/lib/authSeller";
 import { nextImageLoaderRegex } from "next/dist/build/webpack-config";
 import { NextResponse } from "next/server";
-
+import Product from "@/models/Product.js";
 
 //configure cloudinary
 cloudinary.config({

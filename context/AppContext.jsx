@@ -2,7 +2,7 @@
 import { productsDummyData, userDummyData } from "@/assets/assets";
 import { useRouter } from "next/navigation";
 import { createContext, useContext, useEffect, useState } from "react";
-import { useUser } from "@clerk/nextjs"; // must be present
+import { useUser, useAuth } from "@clerk/nextjs";
 import axios from "axios";
 
 export const AppContext = createContext();
