@@ -1,4 +1,4 @@
-import { Inngest } from "inngest";
+import { inngest } from "@/config/inngest";
 import connectDB from "./db.js";
 import User from "../models/User.js"; // ✅ FIXED: import your User model
 import Order from "@/models/Order.js";
@@ -10,7 +10,7 @@ export const inngest = new Inngest({ id: "quickcart-next" });
 // Inngest function to save user data to database
 export const syncUserCreation = inngest.createFunction(
   { id: "sync-user-from-clerk" },
-  { event: "clerk/user.created" },
+  { event: "clerk/user.created" }, 
   async ({ event }) => {
     try {
       await connectDB();
