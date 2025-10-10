@@ -1,10 +1,11 @@
 import connectDB from "./db.js";
-import User from "../models/User.js"; // ✅ FIXED: import your User model
+import User from "../models/User.js"; 
 import Order from "@/models/Order.js";
 import Product from "@/models/Product.js";
-import {inngest } from "inngest/next"; // ✅ keep this
+import { Inngest } from "inngest"; 
 
 // Create a client to send and receive events
+export const inngest = new Inngest({ name: "quickcart-next" });
 
 // Inngest function to save user data to database
 export const syncUserCreation = inngest.createFunction(
