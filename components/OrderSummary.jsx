@@ -1,3 +1,5 @@
+"use client";
+
 import { addressDummyData } from "@/assets/assets";
 import { useAppContext } from "@/context/AppContext";
 import axios from "axios";
@@ -61,8 +63,17 @@ const OrderSummary = () => {
   //       headers: {Authorization: `Bearer ${token}`}
   //     })
 
-  //   } catch(error) {
+  //     if (data.success) {
+  //       toast.success(data.message)
+  //       setCartItems({})
+  //       router.push('/order-placed')
 
+  //     }else{
+  //       toast.error(data.message)
+  //     }
+
+  //   } catch(error) {
+  //     toast.error(error.message)
   //   }
   // }
 
