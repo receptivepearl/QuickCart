@@ -3,9 +3,10 @@ import User from "../models/User.js";
 import Order from "@/models/Order.js";
 import Product from "@/models/Product.js";
 import { Inngest } from "inngest"; 
+// inngest import is correct from video
 
 // Create a client to send and receive events
-export const inngest = new Inngest({ name: "quickcart-next" });
+export const inngest = new Inngest({ id: "quickcart-next" });
 
 // Inngest function to save user data to database
 export const syncUserCreation = inngest.createFunction(
