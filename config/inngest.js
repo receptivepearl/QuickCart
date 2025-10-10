@@ -1,4 +1,3 @@
-import { inngest } from "@/config/inngest";
 import connectDB from "./db.js";
 import User from "../models/User.js"; // ✅ FIXED: import your User model
 import Order from "@/models/Order.js";
