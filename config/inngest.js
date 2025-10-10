@@ -5,7 +5,6 @@ import Product from "@/models/Product.js";
 import { inngest } from "inngest/next"; // ✅ keep this
 
 // Create a client to send and receive events
-export const inngest = new Inngest({ id: "quickcart-next" });
 
 // Inngest function to save user data to database
 export const syncUserCreation = inngest.createFunction(
