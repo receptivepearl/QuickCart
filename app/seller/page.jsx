@@ -20,7 +20,7 @@ const AddProduct = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    
     const formData = new FormData()
 
     formData.append('name',name)
@@ -29,6 +29,7 @@ const AddProduct = () => {
     formData.append('price',price)
     formData.append('offerPrice',offerPrice)
 
+
     for (let i = 0; i<files.length;i++) {
       formData.append('images', files[i])
     }
@@ -36,7 +37,7 @@ const AddProduct = () => {
     try {
 
       const token = await getToken()
-      const {data} = await axios.post('/api/product/add', formData, {headers: {Authorization: `Bearer ${token}`}})
+      const {data} = await axios.post('/api/product/add', formData, {headers: {Authorization: `Bearer ${token}`}});
 
       if (data.success) {
         toast.success(data.message)

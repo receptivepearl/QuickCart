@@ -1,9 +1,14 @@
+
+export const runtime = "nodejs";
+
 import { v2 as cloudinary } from "cloudinary";
 import {getAuth} from '@clerk/nextjs/server'
 import authSeller from "@/lib/authSeller";
-import { nextImageLoaderRegex } from "next/dist/build/webpack-config";
 import { NextResponse } from "next/server";
 import Product from "@/models/Product.js";
+import connectDB from "@/config/db";
+
+
 
 //configure cloudinary
 cloudinary.config({
@@ -15,6 +20,9 @@ cloudinary.config({
 export async function POST(request) {
     try{
         const {userId} = getAuth(request)
+
+        console.log("🧩 Clerk userId:", userId);
+
         const isSeller = await authSeller(userId)
 
         if(!isSeller) {
@@ -58,14 +66,15 @@ export async function POST(request) {
 
         await connectDB()
         const newProduct = await Product.create({
-            userId,
+            userId : userId,
             name,
             description,
             category,
             price: Number(price),
             offerPrice:Number(offerPrice),
             image,
-            date: Date.now()
+            date: Date.now(),
+            
         })
         return NextResponse.json({success:true, message : "Upload Successful", newProduct})
 
