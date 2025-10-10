@@ -39,6 +39,18 @@ const OrderSummary = () => {
     setIsDropdownOpen(false);
   };
 
+  // const createOrder = async() => {
+  //   try{
+
+  //     if(!selectedAddress) {
+  //       return toast.error('Please Select An Address')
+  //     }
+
+  //   } catch(error) {
+
+  //   }
+  // }
+
   const createOrder = async () => {
 
   }

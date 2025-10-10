@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server"
 import Product from "@/models/Product";
-import { Inngest } from "inngest";
+import { inngest } from "@/config/inngest";
 import { getAuth } from "@clerk/nextjs/server";
 import User from "@/models/User";
 
@@ -29,7 +29,7 @@ export async function POST(request) {
             }
 
         })  
-        
+
         //clear user cart
         const user = await User.findById(userId)
         user.cartItems = {}
