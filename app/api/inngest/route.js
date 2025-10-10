@@ -1,11 +1,6 @@
 import { serve } from "inngest/next";
-import {
-  inngest,
-  syncUserCreation,
-  syncUserDeletion,
-  syncUserUpdation,
-  createUserOrder
-} from "@/config/inngest";
+import { syncUserCreation, syncUserUpdation, syncUserDeletion } from "@/config/inngest";
+import { createUserOrder } from "@/config/inngest";  
 
 // Create an API that serves zero functions
 export const { GET, POST, PUT } = serve({
