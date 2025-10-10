@@ -2,7 +2,7 @@ import connectDB from "./db.js";
 import User from "../models/User.js"; // ✅ FIXED: import your User model
 import Order from "@/models/Order.js";
 import Product from "@/models/Product.js";
-import { inngest } from "inngest/next"; // ✅ keep this
+import {inngest } from "inngest/next"; // ✅ keep this
 
 // Create a client to send and receive events
 
