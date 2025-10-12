@@ -46,8 +46,9 @@ const AdminPage = () => {
       <div className="px-6 md:px-16 lg:px-32 py-8">
         <h1 className="text-2xl font-semibold mb-4">Administrator</h1>
         {stats && (
-          <div className="grid md:grid-cols-3 gap-4 mb-8">
+          <div className="grid md:grid-cols-4 gap-4 mb-8">
             <div className="border rounded p-4"><p className="text-sm">Organizations</p><p className="text-2xl font-semibold">{stats.orgCount}</p></div>
+            <div className="border rounded p-4"><p className="text-sm">Users</p><p className="text-2xl font-semibold">{stats.userCount}</p></div>
             <div className="border rounded p-4"><p className="text-sm">Total orders</p><p className="text-2xl font-semibold">{stats.totalOrders}</p></div>
             <div className="border rounded p-4"><p className="text-sm">Products donated</p><p className="text-2xl font-semibold">{stats.totalProducts}</p></div>
           </div>

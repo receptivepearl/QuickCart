@@ -10,6 +10,7 @@ const OrganizationSelfPage = () => {
   })
   const [loading, setLoading] = useState(false)
   const [stats, setStats] = useState(null)
+  const [orders, setOrders] = useState([])
 
   useEffect(() => {
     const load = async () => {
@@ -47,7 +48,10 @@ const OrganizationSelfPage = () => {
       const sp = new URLSearchParams({ organizationId: org._id })
       const res = await fetch(`/api/donation/list?${sp.toString()}`)
       const data = await res.json()
-      if (data.success) setStats({ totalOrders: data.totalOrders, totalProducts: data.totalProducts })
+      if (data.success) {
+        setStats({ totalOrders: data.totalOrders, totalProducts: data.totalProducts })
+        setOrders(data.donations || [])
+      }
     }
     loadStats()
   }, [org?._id])
@@ -95,6 +99,18 @@ const OrganizationSelfPage = () => {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="border rounded p-4"><p className="text-sm">Total orders</p><p className="text-2xl font-semibold">{stats.totalOrders}</p></div>
                   <div className="border rounded p-4"><p className="text-sm">Products donated</p><p className="text-2xl font-semibold">{stats.totalProducts}</p></div>
+                </div>
+                <div className="mt-6">
+                  <h3 className="font-medium mb-2">Recent orders</h3>
+                  <ul className="grid gap-2">
+                    {orders.map(o => (
+                      <li key={o._id} className="border rounded p-3 text-sm flex items-center justify-between">
+                        <span>Qty: {o.quantity}</span>
+                        <span className="text-gray-600">{new Date(o.createdAt).toLocaleString()}</span>
+                      </li>
+                    ))}
+                    {orders.length === 0 && <p className="text-sm text-gray-500">No orders yet.</p>}
+                  </ul>
                 </div>
               </div>
             )}
