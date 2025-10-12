@@ -24,21 +24,11 @@ const Navbar = () => {
         alt="logo"
       />
       <div className="flex items-center gap-4 lg:gap-8 max-md:hidden">
-        <Link href="/" className="hover:text-gray-900 transition">
-          Home
-        </Link>
-        <Link href="/all-products" className="hover:text-gray-900 transition">
-          Shop
-        </Link>
-        <Link href="/" className="hover:text-gray-900 transition">
-          About Us
-        </Link>
-        <Link href="/" className="hover:text-gray-900 transition">
-          Contact
-        </Link>
-
-        {isSeller && <button onClick={() => router.push('/seller')} className="text-xs border px-4 py-1.5 rounded-full">Seller Dashboard</button>}
-
+        <Link href="/" className="hover:text-gray-900 transition">Home</Link>
+        <Link href="/about" className="hover:text-gray-900 transition">About</Link>
+        <Link href="/organizations/register" className="hover:text-gray-900 transition">Register Org</Link>
+        <Link href="/org/dashboard" className="hover:text-gray-900 transition">Org Dashboard</Link>
+        <Link href="/admin" className="hover:text-gray-900 transition">Admin</Link>
       </div>
 
       <ul className="hidden md:flex items-center gap-4 ">
@@ -63,7 +53,6 @@ const Navbar = () => {
       </ul>
 
       <div className="flex items-center md:hidden gap-3">
-        {isSeller && <button onClick={() => router.push('/seller')} className="text-xs border px-4 py-1.5 rounded-full">Seller Dashboard</button>}
         { 
           user 
           ? <>
@@ -72,13 +61,13 @@ const Navbar = () => {
               <UserButton.Action label = "Home" labelIcon = {<HomeIcon />} onClick={()=> router.push('/')}/>
             </UserButton.MenuItems>
             <UserButton.MenuItems>
-              <UserButton.Action label = "Products" labelIcon = {<BoxIcon />} onClick={()=> router.push('/all-products')}/>
+              <UserButton.Action label = "About" labelIcon = {<BoxIcon />} onClick={()=> router.push('/about')}/>
             </UserButton.MenuItems>
             <UserButton.MenuItems>
-              <UserButton.Action label = "Cart" labelIcon = {<CartIcon />} onClick={()=> router.push('/cart')}/>
+              <UserButton.Action label = "Register Org" labelIcon = {<CartIcon />} onClick={()=> router.push('/organizations/register')}/>
             </UserButton.MenuItems>
             <UserButton.MenuItems>
-              <UserButton.Action label = "My Orders" labelIcon = {<BagIcon />} onClick={()=> router.push('/my-orders')}/>
+              <UserButton.Action label = "Org Dashboard" labelIcon = {<BagIcon />} onClick={()=> router.push('/org/dashboard')}/>
             </UserButton.MenuItems>
           </UserButton>
           </>
