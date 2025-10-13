@@ -26,7 +26,7 @@ export async function POST(request) {
       description: description || "",
       address: address || "",
       location: { type: "Point", coordinates: [Number(lng), Number(lat)] },
-      verified: true, // Registered orgs are verified per spec
+      verified: false,
       ownerUserId: userId,
     });
 

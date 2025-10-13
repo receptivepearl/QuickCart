@@ -15,10 +15,10 @@ const AdminPage = () => {
     try {
       const [{ data: s }, { data: orgs }] = await Promise.all([
         axios.get('/api/admin'),
-        axios.get('/api/organizations/nearby?lat=0&lng=0&limit=1000'), // quick list, not actually nearby
+        axios.get('/api/organizations/list?verified=false'),
       ])
       if (s.success) setStats(s.stats)
-      if (orgs.success) setPending(orgs.organizations.filter(o => !o.verified))
+      if (orgs.success) setPending(orgs.organizations)
     } catch (e) {
       setError(e.message)
     } finally {

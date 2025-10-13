@@ -12,7 +12,10 @@ const OrgDashboardPage = () => {
   useEffect(() => {
     const run = async () => {
       try {
-        const { data } = await axios.get('/api/donations')
+        const mine = await axios.get('/api/organizations/mine')
+        if (!mine.data.success) throw new Error(mine.data.message || 'No organization found')
+        const orgId = mine.data.organization._id
+        const { data } = await axios.get(`/api/donations?organizationId=${orgId}`)
         if (data.success) setDonations(data.donations)
         else setError(data.message || 'Failed to load donations')
       } catch (e) {
