@@ -1,65 +1,48 @@
-# QuickCart - A simple eCommerce website
+Full-Stack E-Commerce Website
+Project Overview
 
-QuickCart is an open-source **Next.js eCommerce frontend** project.  
-It provides a modern, fast and customizable shopping UI.  
-This repo is **frontend only** – contributors can improve the design, add new pages, animations and more.
+This project is a full-stack e-commerce website designed with a modern frontend and a scalable backend architecture. The application emphasizes clean system design, reusable backend logic, and clear separation of concerns between the user interface and data layer.
 
----
+The backend is built around a MongoDB-based architecture that supports structured data storage, flexible schemas, and scalable application growth, while the frontend delivers a responsive and customizable shopping experience.
 
-## Features
+Features
+E-Commerce Functionality
 
--   Built with **Next.js + Tailwind CSS**
--   Responsive design
--   Reusable components
--   Customizable layouts and colors
--   Open for contributions (UI/UX, animations, themes, layouts etc.)
+Product listing and browsing
 
----
+Product detail views
 
-## Getting Started
+Responsive shopping interface
 
-1. Clone the repo
+Reusable UI components
 
-    ```bash
-    git clone https://github.com/GreatStackDev/QuickCart.git
-    cd QuickCart
-    ```
+Clean, modern design optimized for extensibility
 
-2. Install dependencies
+Backend Architecture
 
-    ```bash
-    npm install
-    ```
+MongoDB for persistent data storage
 
-3. Run locally
+Structured schemas for products, users, and orders
 
-    ```bash
-    npm run dev
-    ```
+API-driven backend logic
 
----
+Decoupled frontend and backend layers
 
-## Contributing
+Designed for reuse across multiple applications
 
-We welcome all kinds of contributions! You can:
+Tech Stack
+Frontend
 
-- Create new pages
-- Improve layouts
-- Add animations and transitions
-- Enhance responsiveness
-- Refactor components
-- Suggest new UI/UX ideas
-- Add themes or color variations
-- Introduce accessibility improvements
-- Add filtering/search features
-- Improve documentation
+Next.js
 
-Check out [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
+React
 
----
+Tailwind CSS
 
-## License
+Backend
 
-This project is licensed under the **MIT License**.
+Node.js
 
----
+MongoDB
+
+REST-style APIs
