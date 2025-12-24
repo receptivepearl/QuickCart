@@ -1,48 +1,90 @@
-Full-Stack E-Commerce Website
-Project Overview
+# Full-Stack E-Commerce Website
 
-This project is a full-stack e-commerce website designed with a modern frontend and a scalable backend architecture. The application emphasizes clean system design, reusable backend logic, and clear separation of concerns between the user interface and data layer.
+## Project Overview
 
-The backend is built around a MongoDB-based architecture that supports structured data storage, flexible schemas, and scalable application growth, while the frontend delivers a responsive and customizable shopping experience.
+This project is a **full-stack e-commerce website** designed with a modern frontend and a scalable backend architecture. The application emphasizes **clean system design, reusable backend logic, and clear separation of concerns** between the user interface and data layer.
 
-Features
-E-Commerce Functionality
+The backend is built around a **MongoDB-based architecture** that supports structured data storage, flexible schemas, and scalable application growth, while the frontend delivers a responsive and customizable shopping experience.
 
-Product listing and browsing
+---
 
-Product detail views
+## Features
 
-Responsive shopping interface
+### E-Commerce Functionality
 
-Reusable UI components
+* Product listing and browsing
+* Product detail views
+* Responsive shopping interface
+* Reusable UI components
+* Clean, modern design optimized for extensibility
 
-Clean, modern design optimized for extensibility
+### Backend Architecture
 
-Backend Architecture
+* MongoDB for persistent data storage
+* Structured schemas for products, users, and orders
+* API-driven backend logic
+* Decoupled frontend and backend layers
+* Designed for reuse across multiple applications
 
-MongoDB for persistent data storage
+---
 
-Structured schemas for products, users, and orders
+## Tech Stack
 
-API-driven backend logic
+### Frontend
 
-Decoupled frontend and backend layers
+* Next.js
+* React
+* Tailwind CSS
 
-Designed for reuse across multiple applications
+### Backend
 
-Tech Stack
-Frontend
+* Node.js
+* MongoDB
+* REST-style APIs
 
-Next.js
+---
 
-React
+## Architecture Overview
 
-Tailwind CSS
+```
+Frontend (Next.js UI)
+        ↓
+Backend APIs (Node.js)
+        ↓
+MongoDB Database
+```
 
-Backend
+* The frontend handles presentation and user interaction
+* Backend APIs manage business logic and data validation
+* MongoDB provides flexible, scalable data persistence
 
-Node.js
+---
 
-MongoDB
+## Design Principles
 
-REST-style APIs
+* Backend-first architecture
+* Frontend-agnostic APIs
+* Modular and reusable backend logic
+* Scalability and maintainability
+* Clear separation of concerns
+
+This architecture allows the system to adapt easily to new features, frontends, or use cases without major refactoring.
+
+---
+
+## Development Focus
+
+* Full-stack application design
+* Real-world e-commerce data modeling
+* API integration and state management
+* Clean code organization
+* Portfolio-ready engineering practices
+
+---
+
+## Project Scope
+
+* This repository focuses on core e-commerce functionality and architecture
+* Payment processing and production checkout flows can be added later
+* Designed as a functional prototype and extensible foundation
+
