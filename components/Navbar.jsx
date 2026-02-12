@@ -15,6 +15,9 @@ const Navbar = () => {
   const { isSeller, router, user } = useAppContext();
   const {openSignIn} = useClerk()
 
+  const adminIds = (process.env.NEXT_PUBLIC_ADMIN_USER_IDS || '').split(',').map(s=>s.trim()).filter(Boolean)
+  const isAdmin = user && adminIds.includes(user.id)
+
   return (
     <nav className="flex items-center justify-between px-6 md:px-16 lg:px-32 py-3 border-b border-gray-300 text-gray-700">
       <Image
@@ -30,14 +33,13 @@ const Navbar = () => {
         <Link href="/all-products" className="hover:text-gray-900 transition">
           Shop
         </Link>
-        <Link href="/" className="hover:text-gray-900 transition">
-          About Us
-        </Link>
-        <Link href="/" className="hover:text-gray-900 transition">
-          Contact
-        </Link>
+        <Link href="/organizations" className="hover:text-gray-900 transition">Organizations</Link>
+        <Link href="/about" className="hover:text-gray-900 transition">About</Link>
+        <Link href="/" className="hover:text-gray-900 transition">Contact</Link>
 
         {isSeller && <button onClick={() => router.push('/seller')} className="text-xs border px-4 py-1.5 rounded-full">Seller Dashboard</button>}
+        {user && <button onClick={() => router.push('/organization')} className="text-xs border px-4 py-1.5 rounded-full">My Org</button>}
+        {isAdmin && <button onClick={() => router.push('/admin')} className="text-xs border px-4 py-1.5 rounded-full">Admin</button>}
 
       </div>
 
@@ -53,6 +55,17 @@ const Navbar = () => {
             <UserButton.MenuItems>
               <UserButton.Action label = "My Orders" labelIcon = {<BagIcon />} onClick={()=> router.push('/my-orders')}/>
             </UserButton.MenuItems>
+            <UserButton.MenuItems>
+              <UserButton.Action label = "Organizations" onClick={()=> router.push('/organizations')}/>
+            </UserButton.MenuItems>
+            <UserButton.MenuItems>
+              <UserButton.Action label = "My Org" onClick={()=> router.push('/organization')}/>
+            </UserButton.MenuItems>
+            {isAdmin && (
+              <UserButton.MenuItems>
+                <UserButton.Action label = "Admin" onClick={()=> router.push('/admin')}/>
+              </UserButton.MenuItems>
+            )}
           </UserButton>
           </>
           : <button onClick={openSignIn} className="flex items-center gap-2 hover:text-gray-900 transition">
